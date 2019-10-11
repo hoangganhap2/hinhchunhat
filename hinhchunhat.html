@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="mycanvas" ></canvas>
+<script>
+    var a=parseFloat(prompt("Nhập vào chiều dài"));
+    var b=parseFloat(prompt("Nhập vào chiều rộng"));
+    function Rectangle(a,b,dientich,chuvi) {
+        this.a=a;
+        this.b=b;
+        this.dientich=a*b;
+        this.chuvi=2*(a+b);
+        this.canvas=function () {
+            var ctx=document.getElementById("mycanvas").getContext("2d");
+            ctx.beginPath();
+            ctx.fillRect(90,90,this.a,this.b);
+            ctx.fill()
+        }
+    }
+    var rectangle=new Rectangle(a,b);
+    document.writeln("Diện tích hình chữ nhật là: "+rectangle.dientich);
+    document.writeln("Chu vi hình chữ nhật là: "+rectangle.chuvi);
+    rectangle.canvas();
+</script>
+</body>
+</html>
